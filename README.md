@@ -9,6 +9,14 @@ Input: `Hello, there`
 
 Output: `HELLO, THERE`
 
+```swift
+func capitalizeLetters() -> String {
+let message = "Hello, there"
+return message.uppercased()
+}
+print(capitalizeLetters())
+```
+
 2. **Given a String, return a String alternating between uppercase and lowercase letters**
 
 
@@ -23,6 +31,13 @@ Input: `Hello, there`
 
 Output: `Hllo, thr`
 
+```swift
+var string = "Hello, there"
+let vowelE: Set<Character> = ["e"]
+string.removeAll(where: { vowelE.contains($0)})
+print(string)
+```
+
 
 ## Arrays
 
@@ -33,23 +48,57 @@ Input: `[1,5,2,4,1,4]`
 
 Output: `5`
 
+```swift
+let array = [1,5,2,4,1,4]
+let largest = array.reduce(0, {x,y in
+return x > y ? x : y
+})
+print(largest)
+```
+
 2. **Given an array of type [Int], return the smallest element**
 
 Input: `[1,5,2,4,1,4]`
 
 Output: `1`
 
+```swift
+let array = [1,5,2,4,1,4]
+let smallest = array.reduce(1, {x,y in
+return x < y ? x : y
+})
+print(smallest)
+```
 3. **Given an array of type [Int], return its sum**
 
 Input: `[1,5,2,4,1,4]`
 
 Output: `17`
 
+```swift
+let array = [1,5,2,4,1,4]
+let sum = array.reduce(0, {x,y in
+return x + y
+})
+print(sum)
+```
+
 4. **Given an array of type [Double], return its average**
 
 Input: `[3,4.5,7.5,2,1]`
 
 Output: `3.6`
+
+```swift
+func average(_ numbers: [Double]) -> Double {
+var total: Double = 0
+for number in numbers {
+total += number
+}
+return total / Double(numbers.count)
+}
+print(average(input))
+```
 
 5. **Given an array of type [Double] and a Double, return the sum of all numbers in the array greater than a given number**
 
@@ -63,6 +112,13 @@ Output: `12`
 Input: `[3,4.5,7.5,2,1]`
 
 Output: `202.5`
+
+```swift
+let product = array.reduce(1, {x,y in
+return Double (x * y)
+})
+print(product)
+```
 
 7. **Given an array of type [Int], return the second smallest value in the array**
 
